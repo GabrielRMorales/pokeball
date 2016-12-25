@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+        	body{
+        		background-image: url("http://pre15.deviantart.net/2ea7/th/pre/i/2011/161/8/d/pokemon_generation_1_sheet_by_vaawl-d3iizr2.jpg");
+        	}
+        	main{
+        		margin: 75px 35%;
+        		text-align: center;
+        	}
+        	h1{
+                float:right;
+        		font-family: Arial;
+        		margin: 20px auto 0 auto;
+        		text-align: center;
+        	}
+        	#top, #bottom{
+
+        		height: 100px;
+        		width: 207px;
+        		margin: 5px 0;
+        		border: 1px solid black;
+        	}
+        	#top{
+        		background: -moz-linear-gradient(top, #f85032 0%, #f6290c 30%, #f6290c 30%, #f16f5c 50%, #f02f17 71%, #e73827 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #f85032 0%,#f6290c 30%,#f6290c 30%,#f16f5c 50%,#f02f17 71%,#e73827 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, #f85032 0%,#f6290c 30%,#f6290c 30%,#f16f5c 50%,#f02f17 71%,#e73827 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        		border-radius: 100px 100px 0 0;
+        		z-index: 4;
+        	}
+        	#bottom{
+        		background-color: white;
+        		border-radius: 0 0 100px 100px;
+        		
+        	}
+        	#blackline{
+        		position: relative;
+        		top: 99px;
+        		height: 5px;
+        		width: 207px;
+        		background-color: black;
+        		z-index: 4;
+        	}
+        	#blackball {
+        		height:50px;
+        		width:50px;
+        		margin: 0 auto;
+        		position: relative;
+        		top: -12px;
+        		border-radius: 100px;
+        		background-color: black;
+        		z-index: 4;
+        	}
+
+        	#white {
+        		height:42px;
+        		width:42px;
+        		margin: 0 auto;
+        		position: relative;
+        		top: 4px;
+        		border-radius: 100px;
+        		background-color: white;
+        		z-index: 5;
+        	}
+        	#bb {
+        		height:35px;
+        		width:55px;
+        		margin: 0 auto;
+        		position: relative;
+        		top: -3px;
+        		border-radius: 0 0 100px 100px;
+        		background-color: yellow;
+        		       		
+        	}
+        	.open:hover {
+        		 position: relative;
+        		 top: -10px;
+        	}
+        </style>
+	</head>
+	<body>
+	
+	<h1>You <span id="pokemon">choose...</span></h1>
+	<main>
+	<div id="top" class="open">
+	<div id="blackline" class="open">
+	<div id="blackball" class="open">
+		<div id="white" class="open"></div>
+	</div>
+	</div>	
+	</div>
+	<div id="bottom">
+	
+	</div>
+	</main>
+	<script type="text/javascript">
+		$(document).ready(function(){			
+			var pokemon=["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran","Nidorina","Nidoqueen","Nidoran","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"];
+			$(".open").mouseover(function(){
+				var ranum=Math.floor(Math.random() * ((151-1)+1));
+
+   				$("#pokemon").text("chose "+pokemon[ranum]+"!");
+            
+			});
+		 });
+	
+	</script>
+	</body>	
+
+</html>
