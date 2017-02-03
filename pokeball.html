@@ -17,7 +17,7 @@
         		text-align: center;
         	}
         	h1{
-                float:right;
+                
         		font-family: Arial;
         		margin: 20px auto 0 auto;
         		text-align: center;
@@ -80,10 +80,7 @@
         		background-color: yellow;
         		       		
         	}
-        	.open:hover {
-        		 position: relative;
-        		 top: -10px;
-        	}
+        	
         </style>
 	</head>
 	<body>
@@ -93,7 +90,7 @@
 	<div id="top" class="open">
 	<div id="blackline" class="open">
 	<div id="blackball" class="open">
-		<div id="white" class="open"></div>
+	<div id="white" class="open"></div>
 	</div>
 	</div>	
 	</div>
@@ -104,8 +101,13 @@
 	<script type="text/javascript">
 		$(document).ready(function(){			
 			var pokemon=["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran","Nidorina","Nidoqueen","Nidoran","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"];
-			$(".open").mouseover(function(){
-				var ranum=Math.floor(Math.random() * ((151-1)+1));
+			$(".open").click(function(){
+                
+                $("#top").css("position", "relative").css("top", "-10px");
+                                setInterval(function(){
+                $("#top").css("position", "static").css("top", "+10px");
+            }, 1000);
+               var ranum=Math.floor(Math.random() * ((151-1)+1));
 
    				$("#pokemon").text("chose "+pokemon[ranum]+"!");
             
