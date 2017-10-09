@@ -9,9 +9,9 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <style>
-        	body{
+        	/*body{
         		background-image: url("http://pre15.deviantart.net/2ea7/th/pre/i/2011/161/8/d/pokemon_generation_1_sheet_by_vaawl-d3iizr2.jpg");
-        	}
+        	}*/
         	main{
         		margin: 75px 35%;
         		text-align: center;
@@ -99,10 +99,10 @@
 	<body>
 	
 	<h1>You <span id="pokemon">will receive...</span></h1>
+    <div id="info"></div>
 	<main>
-        <!-- // Favorite place to visit? (Beach, Lake, Jungle, Mountains, Desert, Snow, Countryside)-->
-    <form>
-        <p>What is your personality?<p>
+    <form name="survey">
+        <p>What is your personality?</p>
         <input type="radio" name="personality" value="Intense">
         <label>Intense</label><br>
         <input type="radio" name="personality" value="Calm">
@@ -111,8 +111,8 @@
         <label>Shy</label><br>
         <input type="radio" name="personality" value="Funny">
         <label>Funny</label><br>
-        <p>What is your zodiac symbol?<p>
-        <select name="zodiac" size="6">
+        <p>What is your zodiac symbol?</p>
+        <select name="zodiac" id="zodiac" size="6">
             <option value="Acquarius">Acquarius</option>
             <option value="Pisces">Pisces</option>
             <option value="Aries">Aries</option>
@@ -126,8 +126,8 @@
             <option value="Saggitarius">Saggitarius</option>
             <option value="Capricorn">Capricorn</option>
         </select>
-        <p>What is your favorite place to visit?<p>
-        <select name="visit" size="3">
+        <p>What is your favorite place to visit?</p>
+        <select name="place" id="visit" size="3">
             <option value="Beach">Beach</option>
             <option value="Lake">Lake</option>
             <option value="Jungle">Jungle</option>
@@ -141,7 +141,7 @@
         <div id="top" class="open">
         <div id="blackline" class="open">
         <div id="blackball" class="open">
-            <button id="white" class="open" type="submit"></button>
+            <div id="white" class="open" onclick="get_user_info()"></div>
         </div>
         </div>  
         </div>
@@ -152,27 +152,12 @@
     </form>
 	
 	</main>
-	<script type="text/javascript">
-		$(document).ready(function(){			
-			var pokemon=["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran","Nidorina","Nidoqueen","Nidoran","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"];
-
-            //Ask 3 questions via a form
-            
-
-			$(".open").click(function(){
-                
-                $("#top").css("position", "relative").css("top", "-10px");
-                                setInterval(function(){
-                $("#top").css("position", "static").css("top", "+10px");
-            }, 1000);
-               var ranum=Math.floor(Math.random() * ((151-1)+1));
-
-   				$("#pokemon").text("chose "+pokemon[ranum]+"!");
-            
-			});
-		 });
-	
-	</script>
+	<script src="js/main.js">
+    </script>
 	</body>	
 
 </html>
+
+
+
+   
