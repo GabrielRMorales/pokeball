@@ -4,7 +4,6 @@
        var personality = document.querySelector('input[name="personality"]:checked').value,
        zodiac=document.getElementById("zodiac").value,
        visit=document.getElementById("visit").value;
-        //console.log(personality + zodiac + visit);
         $("#top").css("position", "relative").css("top", "-10px");
         setInterval(function(){
             $("#top").css("position", "static").css("top", "+10px");
@@ -121,10 +120,8 @@
     $.ajax({
       url: "https://pokeapi.co/api/v2/pokemon/"+p,
       dataType: 'json',
-
       success: function(data) {
-        console.log(data.name.toUpperCase()+ " weighs "+data.weight + " lbs.");
-        //Add more
+        $("#info").html("<p>"+data.name.toUpperCase()+ " weighs "+data.weight + " lbs. It is "+data.height + " feet tall. </p>");
       }
 
     });
